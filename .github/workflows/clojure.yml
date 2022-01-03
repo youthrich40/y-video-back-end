@@ -18,8 +18,7 @@ jobs:
         echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
 
     - name: pull frontend
-      run: cd /srv/y-video-back-end/y-video-back-end
-      run: ls
+      run: cd /srv/y-video-back-end/y-video-back-end ls
     # - uses: actions/checkout@v2
     # - name: Install dependencies
     #   run: lein deps
