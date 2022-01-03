@@ -16,13 +16,13 @@ jobs:
     - name: Event Information
       run: |
         echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
-    - name: PONG - Dispatch response to received from yvideo-frontend
-      if: github.event.action == 'yvideo-frontend'
-      run: |
-        curl -X POST https://api.github.com/repos/youthrich40/y-video-frontend/dispatches \
-        -H 'Accept: application/vnd.github.everest-preview+json' \
-        -u ${{ secrets.YVIDEO_ACCESS_TOKEN }} \
-        --data '{"event_type": "pong", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+    # - name: PONG - Dispatch response to received from yvideo-frontend
+    #   if: github.event.action == 'yvideo-frontend'
+    #   run: |
+    #     curl -X POST https://api.github.com/repos/youthrich40/y-video-frontend/dispatches \
+    #     -H 'Accept: application/vnd.github.everest-preview+json' \
+    #     -u ${{ secrets.YVIDEO_ACCESS_TOKEN }} \
+    #     --data '{"event_type": "pong", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
 
     # - uses: actions/checkout@v2
     # - name: Install dependencies
